@@ -15,6 +15,12 @@
 			"revisionTime": "2016-09-09T03:51:52Z"
 		},
 		{
+			"checksumSHA1": "twDt9Ldw5++A0adzZq/uxLWdYdk=",
+			"path": "github.com/cskr/pubsub",
+			"revision": "308ca2a9d8371528b36017db3c7eb669b34d9736",
+			"revisionTime": "2016-07-02T04:46:16Z"
+		},
+		{
 			"checksumSHA1": "NWPy8gY+9jExHxBYKhjxJ3ir7/0=",
 			"path": "github.com/goincremental/negroni-sessions",
 			"revision": "0055e7581fb0fe0f6ee5f622199672425526e1b2",
