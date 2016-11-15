@@ -1,0 +1,12 @@
+{
+  "name": "Delta-Server",
+  "description": "Delta-Server",
+  "keywords": ["golang", "postgres"],
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "go run migrations/migrations.go"
+  },
+  "addons": [
+      "heroku-postgresql"
+  ]
+}
