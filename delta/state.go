@@ -21,6 +21,15 @@ func SetupGormDB() *gorm.DB {
 		panic(err)
 	}
 
+	runMigrations(conn)
+
 	return conn
+
+}
+
+
+func runMigrations(M *gormDB) {
+
+	M.AutoMigrate(&models.Event{})
 
 }
