@@ -1,0 +1,85 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "cUQox97am8DlO/e+1Pf2Iu/BQuU=",
+			"path": "github.com/adamar/delta-server",
+			"revision": "0eecba49d038ab8d9421dccccf72a27f5376d2e8",
+			"revisionTime": "2016-11-15T06:54:30Z"
+		},
+		{
+			"checksumSHA1": "Hgzo/kMEZSdhz9TP0KOwyjLiAms=",
+			"path": "github.com/codegangsta/negroni",
+			"revision": "3f7ce7b928e14ff890b067e5bbbc80af73690a9c",
+			"revisionTime": "2016-09-09T03:51:52Z"
+		},
+		{
+			"checksumSHA1": "NWPy8gY+9jExHxBYKhjxJ3ir7/0=",
+			"path": "github.com/goincremental/negroni-sessions",
+			"revision": "0055e7581fb0fe0f6ee5f622199672425526e1b2",
+			"revisionTime": "2016-10-17T07:35:17Z"
+		},
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "veX5bpYOBjZZWMyWxXxys8EH9d8=",
+			"path": "github.com/gorilla/securecookie",
+			"revision": "fa5329f913702981df43dcb2a380bac429c810b5",
+			"revisionTime": "2016-10-03T05:16:01Z"
+		},
+		{
+			"checksumSHA1": "f1dfF3vmO95G/hbwMYlFru/FfMo=",
+			"path": "github.com/gorilla/sessions",
+			"revision": "ca9ada44574153444b00d3fd9c8559e4cc95f896",
+			"revisionTime": "2016-09-22T14:58:04Z"
+		},
+		{
+			"checksumSHA1": "88ochAZ1SsbAH6DgBQ5eTUChFE0=",
+			"path": "github.com/lib/pq",
+			"revision": "ae8357db35d721c58dcdc911318b55bef6b1b001",
+			"revisionTime": "2016-10-14T01:16:34Z"
+		},
+		{
+			"checksumSHA1": "xppHi82MLqVx1eyQmbhTesAEjx8=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "ae8357db35d721c58dcdc911318b55bef6b1b001",
+			"revisionTime": "2016-10-14T01:16:34Z"
+		},
+		{
+			"checksumSHA1": "m4QwaQdvaqDo6Fp4BoykRkEFQ8E=",
+			"path": "github.com/unrolled/render",
+			"revision": "526faf80cd4b305bb8134abea8d20d5ced74faa6",
+			"revisionTime": "2016-10-03T17:53:27Z"
+		},
+		{
+			"checksumSHA1": "hMj8vjbjGCAE368E3xAjZGFON+E=",
+			"path": "github.com/urfave/negroni",
+			"revision": "3f7ce7b928e14ff890b067e5bbbc80af73690a9c",
+			"revisionTime": "2016-09-09T03:51:52Z"
+		},
+		{
+			"checksumSHA1": "+3DSLmsd2v3m5y2T0Z5a5QgT/a8=",
+			"path": "github.com/valyala/gorpc",
+			"revision": "908281bef77441f2d0ec1792189b4032a1dace0c",
+			"revisionTime": "2016-05-19T17:16:14Z"
+		},
+		{
+			"checksumSHA1": "vE43s37+4CJ2CDU6TlOUOYE0K9c=",
+			"path": "golang.org/x/crypto/bcrypt",
+			"revision": "9e9c7d4ed3e28836a0741f74011e308570bec743",
+			"revisionTime": "2016-10-13T17:39:11Z"
+		},
+		{
+			"checksumSHA1": "JsJdKXhz87gWenMwBeejTOeNE7k=",
+			"path": "golang.org/x/crypto/blowfish",
+			"revision": "9e9c7d4ed3e28836a0741f74011e308570bec743",
+			"revisionTime": "2016-10-13T17:39:11Z"
+		}
+	],
+	"rootPath": "github.com/adamar/delta-server"
+}
