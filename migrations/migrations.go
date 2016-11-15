@@ -8,9 +8,9 @@ import (
 func main() {
 
 	DBi := delta.SetupGormDB()
-	if err != nil {
-		panic(err)
-	}
+	//if err != nil {
+	//	panic(err)
+	//}
 
 	DBi.AutoMigrate(&models.Event{})
 
