@@ -4,6 +4,10 @@
 	"GodepVersion": "v74",
 	"Deps": [
 		{
+			"ImportPath": "github.com/adamar/delta-server",
+			"Rev": "0eecba49d038ab8d9421dccccf72a27f5376d2e8"
+		},
+		{
 			"ImportPath": "github.com/codegangsta/negroni",
 			"Comment": "v0.2.0-65-g3f7ce7b",
 			"Rev": "3f7ce7b928e14ff890b067e5bbbc80af73690a9c"
