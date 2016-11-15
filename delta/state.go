@@ -1,6 +1,7 @@
 package delta
 
 import (
+	"github.com/adamar/delta-server/models"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"os"
@@ -27,8 +28,7 @@ func SetupGormDB() *gorm.DB {
 
 }
 
-
-func runMigrations(M *gormDB) {
+func runMigrations(M *gorm.DB) {
 
 	M.AutoMigrate(&models.Event{})
 
