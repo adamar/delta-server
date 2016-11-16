@@ -15,7 +15,7 @@ func RPCServer() {
 	s := gorpc.Server{
 
 		// Accept clients on this TCP address.
-		Addr: "127.0.0.1:12345",
+		Addr: "0.0.0.0:12345",
 
 		Handler: DoIt,
 	}
