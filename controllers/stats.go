@@ -4,6 +4,7 @@ import (
 	"github.com/adamar/delta-server/models"
 	"github.com/unrolled/render"
 	"net/http"
+	"log"
 )
 
 func StatsPage(w http.ResponseWriter, req *http.Request, template string, r *render.Render) {
@@ -12,6 +13,8 @@ func StatsPage(w http.ResponseWriter, req *http.Request, template string, r *ren
 
 	DBu.LogMode(true)
 	DBu.Debug().Last(&user)
+
+	log.Println(user)
 
 	//log.Printf(user)
 

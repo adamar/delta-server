@@ -27,8 +27,17 @@ func Router() *negroni.Negroni {
 	})
 
 	mux.HandleFunc("/stats", func(w http.ResponseWriter, r *http.Request) {
-		StatsPage(w, r, "mainpage", t)
+		StatsPage(w, r, "latest", t)
 	})
+
+	mux.HandleFunc("/api/last", func(w http.ResponseWriter, r *http.Request) {
+		LatestEvent(w, r)
+	})
+
+	mux.HandleFunc("/api/latest", func(w http.ResponseWriter, r *http.Request) {
+		LatestEvents(w, r)
+	})
+
 
 	n.UseHandler(mux)
 
