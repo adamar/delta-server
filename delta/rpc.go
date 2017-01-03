@@ -9,8 +9,8 @@ import (
 
 func RPCServer() {
 
-	gob.Register(models.Event{})
-	gob.Register(models.Response{})
+	gob.RegisterName("Event", models.Event{})
+	gob.RegisterName("Response", models.Response{})
 
 	s := gorpc.Server{
 
