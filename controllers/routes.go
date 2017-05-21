@@ -5,6 +5,7 @@ import (
 	"github.com/codegangsta/negroni"
 	"github.com/unrolled/render"
 	"net/http"
+	"github.com/gorilla/mux"
 )
 
 var (
@@ -20,23 +21,52 @@ func Router() *negroni.Negroni {
 	})
 
 	n := negroni.Classic()
-	mux := http.NewServeMux()
+	mux := mux.NewRouter()
 
+
+
+        ////////////////////////// API - v1 ////////////////////////////////
+
+
+
+        //////////  events  //////////
+
+	mux.HandleFunc("/api/v1/events/recent", RecentEvents)
+
+	mux.HandleFunc("/api/v1/events/{eventId}", SingleEvent)
+
+
+        //////////  hosts  //////////
+
+	//mux.HandleFunc("/api/v1/hosts/recent", RecentHosts)
+
+	//mux.HandleFunc("/api/v1/hosts/{hostId}", SingleHost)
+
+
+
+
+
+
+
+        ////////////////////////// Pages ////////////////////////////////
+
+   
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		SimplePage(w, r, "mainpage", t)
 	})
 
-	mux.HandleFunc("/stats", func(w http.ResponseWriter, r *http.Request) {
-		StatsPage(w, r, "latest", t)
+	mux.HandleFunc("/recent-events", func(w http.ResponseWriter, r *http.Request) {
+		SimplePage(w, r, "latest", t)
 	})
 
-	mux.HandleFunc("/api/last", func(w http.ResponseWriter, r *http.Request) {
-		LatestEvent(w, r)
+	mux.HandleFunc("/event/{eventId}", func(w http.ResponseWriter, r *http.Request) {
+		SimplePage(w, r, "event", t)
 	})
 
-	mux.HandleFunc("/api/latest", func(w http.ResponseWriter, r *http.Request) {
-		LatestEvents(w, r)
-	})
+
+
+
+
 
 
 	n.UseHandler(mux)
