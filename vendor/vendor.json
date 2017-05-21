@@ -3,6 +3,10 @@
 	"ignore": "test",
 	"package": [
 		{
+			"path": "context",
+			"revision": ""
+		},
+		{
 			"checksumSHA1": "cUQox97am8DlO/e+1Pf2Iu/BQuU=",
 			"path": "github.com/adamar/delta-server",
 			"revision": "0eecba49d038ab8d9421dccccf72a27f5376d2e8",
@@ -31,6 +35,12 @@
 			"path": "github.com/gorilla/context",
 			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
 			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "zmCk+lgIeiOf0Ng9aFP9aFy8ksE=",
+			"path": "github.com/gorilla/mux",
+			"revision": "4c1c3952b7d9d0a061a3fa7b36fd373ba0398ebc",
+			"revisionTime": "2017-04-27T04:12:50Z"
 		},
 		{
 			"checksumSHA1": "veX5bpYOBjZZWMyWxXxys8EH9d8=",
@@ -69,10 +79,10 @@
 			"revisionTime": "2016-10-14T01:16:34Z"
 		},
 		{
-			"checksumSHA1": "m4QwaQdvaqDo6Fp4BoykRkEFQ8E=",
+			"checksumSHA1": "XQ2GsdTmZgUO2xycRg02vxBYi50=",
 			"path": "github.com/unrolled/render",
-			"revision": "526faf80cd4b305bb8134abea8d20d5ced74faa6",
-			"revisionTime": "2016-10-03T17:53:27Z"
+			"revision": "50716a0a853771bb36bfce61a45cdefdb98c2e6e",
+			"revisionTime": "2017-01-09T14:32:44Z"
 		},
 		{
 			"checksumSHA1": "hMj8vjbjGCAE368E3xAjZGFON+E=",
