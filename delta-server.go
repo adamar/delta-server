@@ -3,20 +3,14 @@ package main
 import (
 	"github.com/adamar/delta-server/controllers"
 	"github.com/adamar/delta-server/delta"
-	"os"
 )
 
 func main() {
 
+	// Start Delta Server 
 	go delta.RPCServer()
 
-	deltaServer := controllers.Router()
-
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "3300"
-	}
-
-	deltaServer.Run(":" + port)
+	// Start the Web Frontend
+	controllers.RunFrontend()
 
 }
