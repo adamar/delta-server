@@ -7,81 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/static/favicon.ico">
 
-    <title>Delta</title>
+    <title>Delta-IDS</title>
 
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
-
-    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" media="screen">
 
 
 
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Delta</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Main</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Main Page</h1>
+      <div class="page-header">
+        <h1>Recent Events</h1>
+        <p class="lead">A table of recent events across all hosts and all environments.</p>
+      </div>
 
+      <hr>
 
       <table id="table">
         <thead>
           <tr>
-            <th data-field="Uuid">Item ID</th>
+            <th data-field="Uuid" data-formatter="idFormatter">Item ID</th>
+            <th>Hostname</th>
+            <th>Environment</th>
             <th data-field="EventType">Event Source</th>
-            <th data-field="TimeStamp">TimeStamp</th>
+            <th data-field="TimeStamp" data-formatter="dateFormatter">TimeStamp</th>
+            <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Action</th>
           </tr>
         </thead>
       </table>
 
 
-      </div>
 
-    </div><!-- /.container -->
+    </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/ie10-viewport-bug-workaround.js"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+
 
     <script type="text/javascript">
 
-    $.getJSON("/api/latest", function(data) {
+    $.getJSON("/api/v1/events/recent", function(data) {
 
       console.log(data);
 
@@ -93,9 +64,37 @@
 
     });
 
+function idFormatter(value, row, index) {
+	return value.split("-")[0]
+}
+
+function dateFormatter(value, row, index) {
+	return Date(value/1000).toLocaleString();
+}
+
+function actionFormatter(value, row, index) {
+    return [
+        '<a class="remove" style="margin-left: 10px;" href="javascript:void(0)" title="Like">',
+        '<i class="glyphicon glyphicon-remove-circle text-danger"></i>',
+        '</a>',
+        '<a class="info" style="margin-left: 10px;" href="javascript:void(0)" title="Remove">',
+        '<i class="glyphicon glyphicon-info-sign text-default"></i>',
+        '</a>'
+    ].join('');
+}
+
+window.actionEvents = {
+    'click .remove': function (e, value, row, index) {
+        alert('remove item: ' + index);
+    },
+    'click .info': function (e, value, row, index) {
+        alert(row['Data']); 
+    }
+};
+
+
+
     </script>
-
-
 
 
 

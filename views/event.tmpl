@@ -21,15 +21,15 @@
     <div class="container">
 
       <div class="page-header">
-        <h1>Heading</h1>
-        <p class="lead">Some details</p>
+        <h1 id="eventId">Event: -</h1>
+        <p class="lead" id="info"></p>
       </div>
 
 
     <hr/>
 
-    <a href="/recent-events">Recent Events</a>
 
+    
 
 
 
@@ -39,6 +39,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+
+     id = window.location.href.split('/').slice(-1)[0];
+ 
+      $.getJSON("/api/v1/events/" + id, function(data) {
+
+      console.log(data);
+
+    });
+
+    </script>
+
 
   </body>
 </html>
